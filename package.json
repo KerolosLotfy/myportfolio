@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/KerolosLotfy/myportfolio/issues"
   },
-  "homepage": "https://github.com/KerolosLotfy/myportfolio#readme",
-  "dependencies": {
-    "typescript": "^5.0.4"
-  }
+  "homepage": "https://github.com/KerolosLotfy/myportfolio#readme"
 }
