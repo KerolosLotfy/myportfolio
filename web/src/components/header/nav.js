@@ -25,7 +25,7 @@ export function Nav() {
 
       <ul className={list ? "active" : ""}>
         <li>
-          <a href="#home" onClick={handleLinks}>
+          <a href="#home" className="active" onClick={handleLinks}>
             Home
           </a>
         </li>
