@@ -1,0 +1,131 @@
+section {
+  /* min-height: 100vh; */
+  padding: 50px 0;
+}
+
+#home {
+  padding: 0px;
+  height: calc(100vh - 100px);
+}
+
+#home > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.text-container {
+  font-size: 2.5rem;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+  -webkit-text-stroke: 1px var(--main-color);
+  color: var(--dark-color);
+  text-overflow: ellipsis;
+  border: 1px solid green;
+}
+
+.text-container span {
+  position: relative;
+  display: block;
+  width: max-content;
+  text-overflow: ellipsis;
+  margin: 0 auto;
+}
+
+.text-container span::after {
+  position: absolute;
+  content: "";
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 5px;
+  background-color: var(--active-color);
+  animation: typing infinite 0.8s linear;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: floating infinite 3s linear;
+}
+
+.img-container .man {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+}
+
+.img-container .cloud {
+  width: 500px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.btns > a {
+  font-size: 30px;
+  padding: 20px;
+  font-family: "Iceberg";
+  color: transparent;
+  text-decoration: none;
+  -webkit-text-stroke: 1px var(--active-color);
+}
+
+@keyframes typing {
+  0%,
+  100% {
+    height: 60px;
+  }
+
+  50% {
+    height: 0;
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Media query */
+
+@media screen and (max-width: 1200px) {
+  .img-container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .text-container {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .text-container {
+    font-size: 1.6rem;
+  }
+
+  .text-container span::after {
+    display: none;
+  }
+}
