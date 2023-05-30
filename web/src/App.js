@@ -9,9 +9,9 @@ function App() {
       </React.StrictMode>
       <Main
         texts={[
-          "I  a Frontend developer",
-          "I a FullStack developer",
-          "I  a NodeJs developer",
+          "Frontend developer",
+          "NodeJs developer",
+          "FullStack developer",
         ]}
       />
     </>

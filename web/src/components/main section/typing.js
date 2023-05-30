@@ -1,42 +1,61 @@
-export const typing = async (sequences, el, speed = 150) => {
-  let seqIndex = 0;
-  let letterIndex = 0;
-  const typed = async () => {
-    if (seqIndex < sequences.length) {
-      if (letterIndex < sequences[seqIndex].length) {
-        el.textContent += sequences[seqIndex][letterIndex];
-        letterIndex++;
-        setTimeout(typed, speed);
-      } else {
-        // Waiting for 1000 ms
+import React, { useEffect, useState } from "react";
+
+function Typing({ texts, speed = 100, delay = 1000 }) {
+  const [index, setIndex] = useState(0);
+  const [letter, setLetter] = useState("");
+  const [letterIndex, setLetterIndex] = useState(0);
+
+  useEffect(() => {
+    setTimeout(async () => {
+      // waiting 1 second
+      if (letterIndex === 0) {
         await waiting();
-        spacing(el);
       }
-    } else {
-      typed();
-      seqIndex = 0;
-      letterIndex = 0;
-    }
-  };
-  typed();
-  const spacing = (el) => {
-    let seq = el.textContent.split("");
-    let del = setInterval(() => {
-      if (seq.length !== 0) {
-        seq.pop();
-        el.textContent = seq.join("");
+      if (index < texts.length) {
+        if (letterIndex < texts[index].length) {
+          setLetter((letter) => (letter += texts[index][letterIndex]));
+          setLetterIndex(letterIndex + 1);
+        } else {
+          // waiting 1 second
+          if (letter.length === texts[index].length) {
+            await waiting();
+          }
+          // Delete Letters
+          spacing();
+        }
       } else {
-        clearInterval(del);
-        letterIndex = 0;
-        seqIndex++;
-        typed();
+        setIndex(0);
+        setLetterIndex(0);
       }
     }, speed);
-  };
-};
 
-const waiting = () => {
-  return new Promise((res, rej) => {
-    setTimeout(res, 1000);
-  });
-};
+    const spacing = async () => {
+      let letters = letter.split("");
+      setLetter("");
+      if (letters.length !== 0) {
+        letters.pop();
+        setLetter(letters.join(""));
+      } else {
+        setLetterIndex(0);
+        setIndex(index + 1);
+      }
+    };
+
+    const waiting = () => {
+      return new Promise((res) => {
+        setTimeout(res, 1000);
+      });
+    };
+  }, [index, letterIndex, letter, texts, speed]);
+
+  return (
+    <span>
+      I a{" "}
+      <b>
+        {letter} <i></i>
+      </b>
+    </span>
+  );
+}
+
+export default Typing;
