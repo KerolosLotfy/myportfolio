@@ -1,0 +1,109 @@
+#skills {
+  min-height: 100vh;
+  color: var(--active-color);
+}
+
+/* section:nth-of-type(2n) {
+  background-color: #009df533;
+} */
+
+.main-header {
+  font-size: 2.5rem;
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-text-stroke: 1px var(--active-color);
+  color: transparent;
+}
+
+.skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  margin: auto;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 200px);
+}
+
+.skills-container ul {
+  position: relative;
+  padding: 30px;
+  border: 5px solid var(--active-color);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 30px;
+}
+.skills-container ul::before {
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  content: attr(data-skills);
+  border: 5px solid var(--active-color);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 20;
+  background-color: var(--dark-color);
+  font-size: 1rem;
+}
+
+.skills-container ul li {
+  border: 20px solid var(--active-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+.skills-container ul li .progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border-radius: 50%;
+  fill: transparent;
+  /* border: 10px solid red; */
+  stroke-width: 3px;
+  stroke: #000;
+  /* stroke-dasharray: 200; */
+}
+
+.skills-container ul .arrows {
+  position: absolute;
+  top: -20px;
+  color: var(--active-color);
+  width: calc(100% + 60px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-container ul .arrows > * {
+  cursor: pointer;
+  transform: rotate(20deg);
+  font-size: 2rem;
+}
+
+.skills-container ul .arrows > *:hover {
+  color: var(--white);
+}
