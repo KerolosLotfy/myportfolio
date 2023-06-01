@@ -20,5 +20,7 @@
   "bugs": {
     "url": "https://github.com/KerolosLotfy/myportfolio/issues"
   },
-  "homepage": "https://github.com/KerolosLotfy/myportfolio#readme"
+  "homepage": "https://github.com/KerolosLotfy/myportfolio#readme",
+  "languages" : ["css","HTML", "React"]
+  
 }
