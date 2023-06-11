@@ -5,8 +5,8 @@ export function Skills() {
   return (
     <section id="skills">
       <Header title={"My Skills"} />
-      <div className="skills-container">
-        <GetSkills />
+      <div className="container">
+        <GetSkills />    
       </div>
     </section>
   );
