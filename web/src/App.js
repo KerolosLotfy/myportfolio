@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "./components/header";
 import { Main } from "./components/main section";
-import { Skills } from "./components/skills section";
+// import { Skills } from "./components/skills section";
+import { Portfolio } from "./components/projects section";
 function App() {
   return (
     <>
@@ -17,7 +18,8 @@ function App() {
         ]}
       />
 
-      <Skills />
+      {/* <Skills /> */}
+      <Portfolio />
     </>
   );
 }
