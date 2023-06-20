@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "My Portfolio",
-    "Languages": [
+    "languages": [
       "HTML",
       "CSS",
       "JavaScript",
@@ -20,7 +20,7 @@
   {
     "id": 2,
     "title": "Landing Page",
-    "Languages": ["HTML", "CSS", "JavaScript"],
+    "languages": ["HTML", "CSS", "JavaScript"],
     "img": "../../assets/images/man.svg",
     "repo": "https://www.github.com/keroloslotfy/myportfolio",
     "demo": "https://keroloslotfy.github.io/myportfolio",
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "title": "Todo List",
-    "Languages": ["HTML", "CSS", "JavaScript"],
+    "languages": ["HTML", "CSS", "JavaScript"],
     "img": "../../assets/images/man.svg",
     "repo": "https://www.github.com/keroloslotfy/to-do-list",
     "demo": "https://keroloslotfy.github.io/to-do-list",
@@ -40,7 +40,7 @@
   {
     "id": 4,
     "title": "Tic-Tac-Tac",
-    "Languages": ["HTML", "CSS", "JavaScript"],
+    "languages": ["HTML", "CSS", "JavaScript"],
     "img": "../../assets/images/man.svg",
     "repo": "https://www.github.com/keroloslotfy/X-O-Game",
     "demo": "https://keroloslotfy.github.io/X-O-Game",

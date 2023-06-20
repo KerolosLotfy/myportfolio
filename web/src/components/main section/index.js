@@ -2,8 +2,13 @@ import "./style.css";
 import cloudImg from "../../assets/images/cloud.svg";
 import manImg from "../../assets/images/man.svg";
 import Typing from "./typing";
-
-export function Main({ texts }) {
+import { Link } from "react-router-dom";
+export function Main() {
+  const texts = [
+    "Frontend developer",
+    "NodeJs developer",
+    "FullStack developer",
+  ];
   return (
     <section id="home">
       <div className="container">
@@ -13,9 +18,7 @@ export function Main({ texts }) {
             {Typing({ texts, speed: 120, delay: 1000 })}
           </h1>
           <div className="btns">
-            <a href="/about" target="_blank">
-              About Me
-            </a>
+            <Link to="/about">About Me</Link>
             <a href="#contact">Hire Me</a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
+
 export function Nav() {
   const [list, setList] = useState(false);
 
@@ -25,22 +26,22 @@ export function Nav() {
 
       <ul className={list ? "active" : ""}>
         <li>
-          <a href="#home" className="active" onClick={handleLinks}>
+          <a href="/#home" className="active" onClick={handleLinks}>
             Home
           </a>
         </li>
         <li>
-          <a href="#skills" onClick={handleLinks}>
+          <a href="/#skills" onClick={handleLinks}>
             ٍSkills
           </a>
         </li>
         <li>
-          <a href="#portfolio" onClick={handleLinks}>
+          <a href="/#portfolio" onClick={handleLinks}>
             Portfolio
           </a>
         </li>
         <li>
-          <a href="#contact" onClick={handleLinks}>
+          <a href="/#contact" onClick={handleLinks}>
             Contact
           </a>
         </li>

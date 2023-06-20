@@ -21,12 +21,12 @@ header > .container {
   font-family: "Iceberg"; 
  }
 
-header .logo {
+.logo {
   position: relative;
   width: max-content;
 }
 
-header .logo::after {
+.logo::after {
   position: absolute;
   content: "";
   border-radius: 0 0 30px 30px;
@@ -39,7 +39,7 @@ header .logo::after {
   z-index: 1;
 }
 
-header .logo > a {
+.logo > a {
   position: relative;
   font-size: 40px;
   -webkit-text-stroke: 1px var(--main-color);

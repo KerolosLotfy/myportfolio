@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+footer {
+  background-color: var(--dark-color);
+  color: var(--active-color);
+  padding: 20px;
+  border-top: 5px solid var(--active-color);
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px 150px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+footer h2 {
+  border: 2px solid var(--active-color);
+  border-top: 0px;
+  border-left: 0px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+footer .ILinks p {
+  font-size: 1.2rem;
+  -webkit-text-stroke: 0.5px var(--active-color);
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+footer .ILinks a {
+  display: block;
+  font-size: 1.2rem;
+}
+
+footer .ILinks a:hover {
+  color: var(--active-color);
+}
+
+footer .container > p {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+footer .container > iframe {
+  border: 0;
+  /* box-shadow:  0 0 10px var(--active-color); */
+  border-radius: 20px;
+}
+
+footer .container > p b {
+  color: var(--active-color);
+  font-family: "Pacifico", cursive;
+}

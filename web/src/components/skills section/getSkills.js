@@ -22,12 +22,12 @@ function GetSkills() {
         });
     };
     fetchData();
-  }, [skills]);
+  }, []);
 
   let data = skills
-    ? skills.map((obj) => {
-        return (
-          <>
+    ? typeof skills !== "string"
+      ? skills.map((obj) => {
+          return (
             <li key={obj.id} id={obj.id}>
               <div
                 className="progress-bar"
@@ -39,9 +39,9 @@ function GetSkills() {
               </div>
               <h3>{obj.title}</h3>
             </li>
-          </>
-        );
-      })
+          );
+        })
+      : skills
     : "";
 
   const dragStart = (e) => {
