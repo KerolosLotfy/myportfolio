@@ -1,8 +1,8 @@
 import { initDB } from "../database/sql";
-import { skills } from "../database/types";
+import { dataTypes } from "../database/types";
 
 export class Skills {
-  create = async ({ id, title, percent }: skills) => {
+  create = async ({ id, title, percent }: dataTypes["skills"]) => {
     try {
       const DB = await initDB();
       const sql = `insert into skills (id,title,percent) values (?,?,?);`;
@@ -35,7 +35,7 @@ export class Skills {
     }
   };
 
-  update = async ({ id, title, percent }: skills) => {
+  update = async ({ id, title, percent }: dataTypes["skills"]) => {
     try {
       const DB = await initDB();
       const sql = `UPDATE skills SET title = ?, percent = ? WHERE id = ?`;

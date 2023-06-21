@@ -1,10 +1,18 @@
 import { Application } from "express";
 
-import * as skillsFunc from "./skills";
+import * as skills from "./skills";
+import { getData } from "./getAllData";
+import * as projects from "./projects";
 export const reactRouters = (app: Application): void => {
-  app.get("/dash/skills", skillsFunc.showAll);
-  app.post("/dash/skills", skillsFunc.add);
-  app.get("/dash/skill/:id", skillsFunc.showOne);
-  app.put("/dash/skill/:id", skillsFunc.update);
-  app.delete("/dash/skill/:id", skillsFunc.Delete);
+  app.get("/api/all", getData); // Get all Data 
+  // Skills
+  app.post("/api/skills", skills.add);
+  app.get("/api/skill/:id", skills.showOne);
+  app.put("/api/skill/:id", skills.update);
+  app.delete("/api/skill/:id", skills.Delete);
+  // projects
+  app.post("/api/projects", projects.add);
+  app.get("/api/project/:id", projects.showOne);
+  app.put("/api/project/:id", projects.update);
+  app.delete("/api/project/:id", projects.Delete);
 };

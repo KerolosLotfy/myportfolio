@@ -1,23 +1,29 @@
 import { Request, Response, NextFunction } from "express";
-import { Skills } from "../models/skills";
+import { projects } from "../models/projects";
 import { dataTypes } from "../database/types";
 import crypto from "crypto";
 
-const skillsFunc = new Skills();
+const projectsFunc = new projects();
 
 export const add = async (req: Request, res: Response, _next: NextFunction) => {
   try {
-    const { title, percent } = req.body;
-    if (!title || !percent) {
-      return res.status(400).send("All Fields Required");
+    const { title, languages, img, repo, demo, description, category } =
+      req.body;
+    if (!title || !languages || !repo || !demo) {
+      return res.send("data Required");
     }
-    await skillsFunc.create({
+    await projectsFunc.create({
       id: crypto.randomUUID(),
       title,
-      percent,
-    } as dataTypes["skills"]);
+      languages,
+      img,
+      repo,
+      demo,
+      category,
+      description,
+    } as dataTypes["projects"]);
 
-    return res.status(200).send("ok");
+    return res.status(200).send("Add New Project");
   } catch (err: any) {
     console.log(err);
   }
@@ -29,7 +35,7 @@ export const showAll = async (
   _next: NextFunction
 ) => {
   try {
-    const result = await skillsFunc.getAll();
+    const result = await projectsFunc.getAll();
     return result;
   } catch (err: any) {
     console.log(err);
@@ -42,8 +48,8 @@ export const showOne = async (
   _next: NextFunction
 ) => {
   try {
-    const result = await skillsFunc.getOne(req.params.id);
-    res.send({ skills: result });
+    const result = await projectsFunc.getOne(req.params.id);
+    res.send({ projects: result });
   } catch (err: any) {
     console.log(err);
   }
@@ -54,13 +60,18 @@ export const update = async (
   res: Response,
   _next: NextFunction
 ) => {
-  const { title, percent } = req.body;
+  const { title, languages, img, repo, demo, category, description } = req.body;
   try {
-    await skillsFunc.update({
+    await projectsFunc.update({
       id: req.params.id,
       title,
-      percent,
-    } as dataTypes["skills"]);
+      languages,
+      img,
+      repo,
+      demo,
+      category,
+      description
+    } as dataTypes["projects"]);
     res.status(200).send("Updated");
   } catch (err: any) {
     console.log(err);
@@ -73,7 +84,7 @@ export const Delete = async (
   _next: NextFunction
 ) => {
   try {
-    await skillsFunc.delete(req.params.id);
+    await projectsFunc.delete(req.params.id);
     res.status(200).send("Deleted");
   } catch (err: any) {
     console.log(err);
