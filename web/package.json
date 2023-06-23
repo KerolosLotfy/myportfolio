@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "homepage": "http://keroloslotfy.github.io/myportfolio",
+  "homepage": "http://keroloslotfy.github.io/myportfolio/web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

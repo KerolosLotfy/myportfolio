@@ -18,7 +18,7 @@ import { NewSkill } from "./components/dashboard/components/skills/new";
 
 function App() {
   return (
-    <Browser basename="/myportfolio">
+    <Browser basename="/myportfolio/web">
       <Routes>
         <Route
           path="/"
