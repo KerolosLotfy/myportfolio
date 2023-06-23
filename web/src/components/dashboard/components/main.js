@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
+import { getData } from "../../fetchData";
+
 export const DashMain = () => {
+  const [projects, setProjects] = useState(0);
+  const [skills, setSkills] = useState(0);
+
+  useEffect(() => {
+    (async () => await getData())().then((data) => {
+      setSkills(data.skills.length);
+      setProjects(data.projects.length);
+    });
+  }, []);
   return (
     <>
-      <h2 className="dash-title">Dashboard</h2>
+      <div className="dash-title">
+        <h2>Dashboard</h2>
+        {/* <Button
+          custom={{ class: "btn", value: "New" }}
+          click={() => x("new")}
+        /> */}
+      </div>
       <div className="container">
         <div id="statics">
           <h3>Statics</h3>
@@ -12,11 +30,11 @@ export const DashMain = () => {
             </div>
             <div className="box" style={{ border: "5px solid #0f0" }}>
               <p style={{ color: "#0f0" }}>Projects</p>
-              <span className="num">6</span>
+              <span className="num">{projects}</span>
             </div>
             <div className="box" style={{ border: "5px solid #00f" }}>
               <p style={{ color: "#00f" }}>Skills</p>
-              <span className="num">3</span>
+              <span className="num">{skills}</span>
             </div>
           </div>
         </div>

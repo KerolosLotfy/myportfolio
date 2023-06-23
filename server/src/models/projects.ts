@@ -14,17 +14,17 @@ export class projects {
   }: dataTypes["projects"]) => {
     try {
       const DB = await initDB();
-      const sql = `insert into projects (id,title,languages,img,repo,demo,description,category) values (?,?,?,?,?,?);`;
+      const sql = `insert into projects (id,title,languages,img,repo,demo,description,category) values (?,?,?,?,?,?,?,?);`;
       const result = await DB.run(
         sql,
         id,
         title,
         languages,
-        img,
+        img ,
         repo,
         demo,
         description,
-        category
+        category 
       );
       return result;
     } catch (e: any) {

@@ -17,7 +17,7 @@ export const add = async (req: Request, res: Response, _next: NextFunction) => {
       percent,
     } as dataTypes["skills"]);
 
-    return res.status(200).send("ok");
+    return res.status(200).send("Added");
   } catch (err: any) {
     console.log(err);
   }

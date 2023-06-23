@@ -1,27 +1,18 @@
 import { useEffect, useState } from "react";
 import { React } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { getData } from "../fetchData";
 
 function GetSkills() {
   const [skills, setSkills] = useState(null);
   let isDragging = false,
     PrevX,
     PrevScrollLeft;
+
   useEffect(() => {
-    const fetchData = async () => {
-      await fetch("http://localhost:5500/dash/skills")
-        .then((res) => {
-          return res.text();
-        })
-        .then((result) => {
-          setSkills(JSON.parse(result).skills);
-        })
-        .catch((e) => {
-          console.log(e);
-          setSkills(e.message);
-        });
-    };
-    fetchData();
+    (async () => await getData())().then((data) =>
+      typeof data === "object" ? setSkills(data.skills) : setSkills(data)
+    );
   }, []);
 
   let data = skills

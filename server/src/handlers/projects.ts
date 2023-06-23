@@ -9,6 +9,7 @@ export const add = async (req: Request, res: Response, _next: NextFunction) => {
   try {
     const { title, languages, img, repo, demo, description, category } =
       req.body;
+
     if (!title || !languages || !repo || !demo) {
       return res.send("data Required");
     }
@@ -70,7 +71,7 @@ export const update = async (
       repo,
       demo,
       category,
-      description
+      description,
     } as dataTypes["projects"]);
     res.status(200).send("Updated");
   } catch (err: any) {

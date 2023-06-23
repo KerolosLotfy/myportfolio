@@ -9,10 +9,12 @@ import { Project } from "./components/projectDetails";
 // import { About } from "./components/about";
 import { Dashboard } from "./components/dashboard";
 import { E404 } from "./components/error 404";
-import { DashProjects } from "./components/dashboard/components/Projects";
+import { DashProjects } from "./components/dashboard/components/projects";
 import { DashSkills } from "./components/dashboard/components/skills";
 import { DashMain } from "./components/dashboard/components/main";
 import { Settings } from "./components/dashboard/components/settings";
+import { NewProject } from "./components/dashboard/components/projects/newProjects";
+import { NewSkill } from "./components/dashboard/components/skills/new";
 
 function App() {
   return (
@@ -41,8 +43,12 @@ function App() {
         />
         <Route path="/dash" element={<Dashboard />} exact>
           <Route path="" element={<DashMain />} exact />
-          <Route path="projects" element={<DashProjects />} exact />
-          <Route path="skills" element={<DashSkills />} exact />
+          <Route path="projects" element={<DashProjects />}>
+            <Route path="new" element={<NewProject />} />
+          </Route>
+          <Route path="skills" element={<DashSkills />}>
+            <Route path="new" element={<NewSkill />} />
+          </Route>
           <Route path="settings" element={<Settings />} exact />
         </Route>
         <Route path="/pro">
