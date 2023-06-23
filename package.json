@@ -1,24 +1,6 @@
 {
-  "name": "myportfolio",
-  "version": "1.0.0",
-  "description": "It is Sample Portfolio  website  with  React Js  &amp; TypeScript",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KerolosLotfy/myportfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KerolosLotfy/myportfolio/issues"
-  },
-  "homepage": "https://github.com/KerolosLotfy/myportfolio#readme"
+    "predeploy": "cd web && npm run build",
+    "deploy": "cd web && gh-pages -d build"
+  }
 }
